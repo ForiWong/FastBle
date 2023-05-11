@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+//可以维持多个设备连接
 public class MultipleBluetoothController {
 
     private final BleLruHashMap<String, BleBluetooth> bleLruHashMap;

@@ -125,6 +125,7 @@ public class SplitWriter {
         mHandler.removeCallbacksAndMessages(null);
     }
 
+    //分包
     private static Queue<byte[]> splitByte(byte[] data, int count) {
         if (count > 20) {
             BleLog.w("Be careful: split count beyond 20! Ensure MTU higher than 23!");

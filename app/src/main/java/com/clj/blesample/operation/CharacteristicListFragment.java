@@ -47,7 +47,7 @@ public class CharacteristicListFragment extends Fragment {
                 final BluetoothGattCharacteristic characteristic = mResultAdapter.getItem(position);
                 final List<Integer> propList = new ArrayList<>();
                 List<String> propNameList = new ArrayList<>();
-                int charaProp = characteristic.getProperties();
+                int charaProp = characteristic.getProperties();//特征值的属性 Returns the properties of this characteristic.
                 if ((charaProp & BluetoothGattCharacteristic.PROPERTY_READ) > 0) {
                     propList.add(CharacteristicOperationFragment.PROPERTY_READ);
                     propNameList.add("Read");

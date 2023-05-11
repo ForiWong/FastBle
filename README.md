@@ -1,3 +1,5 @@
+[Android BLE开发详解和FastBle源码解析](https://www.jianshu.com/p/795bb0a08beb)
+
 ![效果图](https://github.com/Jasonchenlijian/FastBle/raw/master/preview/fastble_poster.png)
 
 Thanks to the logo designed by [anharismail](https://github.com/anharismail)

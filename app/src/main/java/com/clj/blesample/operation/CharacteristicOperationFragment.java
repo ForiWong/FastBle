@@ -126,6 +126,7 @@ public class CharacteristicOperationFragment extends Fragment {
                             if (TextUtils.isEmpty(hex)) {
                                 return;
                             }
+                            //SplitWriter 默认是分包写入。讲数组放入队列byteQueue,依次发送通过Handler
                             BleManager.getInstance().write(
                                     bleDevice,
                                     characteristic.getService().getUuid().toString(),
