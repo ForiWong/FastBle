@@ -78,6 +78,7 @@ public class BleScanner {
                         callback.onScanFinished(bleDeviceList.get(0));
                     }
                     final List<BleDevice> list = bleDeviceList;
+                    //
                     new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
                         @Override
                         public void run() {

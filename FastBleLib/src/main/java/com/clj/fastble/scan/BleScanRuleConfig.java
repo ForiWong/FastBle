@@ -5,6 +5,7 @@ import com.clj.fastble.BleManager;
 
 import java.util.UUID;
 
+//Ble扫描规则
 public class BleScanRuleConfig {
 
     private UUID[] mServiceUuids = null;

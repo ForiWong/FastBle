@@ -46,7 +46,7 @@ public class HexUtil {
         return formatHexString(data, false);
     }
 
-    //byte[] -> Hex String
+    // byte[] -> Hex String
     public static String formatHexString(byte[] data, boolean addSpace) {
         if (data == null || data.length < 1)
             return null;
@@ -94,7 +94,7 @@ public class HexUtil {
         return digit;
     }
 
-    //Hex -> byte[]
+    // Hex -> byte[]
     public static byte[] hexStringToBytes(String hexString) {
         if (hexString == null || hexString.equals("")) {
             return null;

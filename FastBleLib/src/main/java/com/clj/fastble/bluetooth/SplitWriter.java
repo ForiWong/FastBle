@@ -17,8 +17,8 @@ import java.util.Queue;
 
 public class SplitWriter {
 
-    private HandlerThread mHandlerThread;
-    private Handler mHandler;
+    private HandlerThread mHandlerThread; //
+    private Handler mHandler; //
 
     private BleBluetooth mBleBluetooth;
     private String mUuid_service;
@@ -40,7 +40,7 @@ public class SplitWriter {
             public void handleMessage(Message msg) {
                 super.handleMessage(msg);
                 if (msg.what == BleMsg.MSG_SPLIT_WRITE_NEXT) {
-                    write();
+                    write();//
                 }
             }
         };
@@ -77,6 +77,7 @@ public class SplitWriter {
         write();
     }
 
+    //依次发送
     private void write() {
         if (mDataQueue.peek() == null) {
             release();
@@ -115,7 +116,7 @@ public class SplitWriter {
                         mUuid_write);
 
         if (!mSendNextWhenLastSuccess) {
-            Message message = mHandler.obtainMessage(BleMsg.MSG_SPLIT_WRITE_NEXT);
+            Message message = mHandler.obtainMessage(BleMsg.MSG_SPLIT_WRITE_NEXT);//
             mHandler.sendMessageDelayed(message, mIntervalBetweenTwoPackage);
         }
     }
@@ -125,7 +126,7 @@ public class SplitWriter {
         mHandler.removeCallbacksAndMessages(null);
     }
 
-    //分包
+    // 分包
     private static Queue<byte[]> splitByte(byte[] data, int count) {
         if (count > 20) {
             BleLog.w("Be careful: split count beyond 20! Ensure MTU higher than 23!");

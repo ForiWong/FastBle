@@ -9,8 +9,8 @@ import android.os.Parcelable;
 public class BleDevice implements Parcelable {
 
     private BluetoothDevice mDevice;
-    private byte[] mScanRecord;
-    private int mRssi;
+    private byte[] mScanRecord;//todo 被扫描到时候携带的广播数据
+    private int mRssi;//信号强度
     private long mTimestampNanos;
 
     public BleDevice(BluetoothDevice device) {
@@ -56,6 +56,7 @@ public class BleDevice implements Parcelable {
         }
     };
 
+    //蓝牙广播名字
     public String getName() {
         if (mDevice != null) {
             return mDevice.getName();
@@ -63,6 +64,7 @@ public class BleDevice implements Parcelable {
         return null;
     }
 
+    //Mac地址
     public String getMac() {
         if (mDevice != null) {
             return mDevice.getAddress();

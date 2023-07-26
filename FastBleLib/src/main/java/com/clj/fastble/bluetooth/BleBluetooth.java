@@ -36,7 +36,7 @@ import java.util.Map;
 import static android.bluetooth.BluetoothDevice.TRANSPORT_LE;
 
 @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
-public class BleBluetooth {
+public class BleBluetooth {//
 
     private BleGattCallback bleGattCallback;
     private BleRssiCallback bleRssiCallback;
@@ -50,7 +50,7 @@ public class BleBluetooth {
     private boolean isActiveDisconnect = false;
     private final BleDevice bleDevice;
     private BluetoothGatt bluetoothGatt;
-    private final MainHandler mainHandler = new MainHandler(Looper.getMainLooper());
+    private final MainHandler mainHandler = new MainHandler(Looper.getMainLooper());//
     private int connectRetryCount = 0;
 
     public BleBluetooth(BleDevice bleDevice) {

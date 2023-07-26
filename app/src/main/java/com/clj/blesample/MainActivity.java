@@ -227,6 +227,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void startScan() {
         BleManager.getInstance().scan(new BleScanCallback() {
+            //开始搜索
             @Override
             public void onScanStarted(boolean success) {
                 mDeviceAdapter.clearScanDevice();
@@ -235,18 +236,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 img_loading.setVisibility(View.VISIBLE);
                 btn_scan.setText(getString(R.string.stop_scan));
             }
-
+            //没搜索到一条的回调
             @Override
             public void onLeScan(BleDevice bleDevice) {
                 super.onLeScan(bleDevice);
             }
-
+            // 搜索中...
+            // 扫描过程中的所有过滤后的结果回调。与onLeScan区别之处在于：它会回到主线程；同一个设备只会出现一次；
+            // 出现的设备是经过扫描过滤规则过滤后的设备。
             @Override
             public void onScanning(BleDevice bleDevice) {
                 mDeviceAdapter.addDevice(bleDevice);
                 mDeviceAdapter.notifyDataSetChanged();
             }
-
+            //搜索结束，返回所有结果
             @Override
             public void onScanFinished(List<BleDevice> scanResultList) {
                 img_loading.clearAnimation();

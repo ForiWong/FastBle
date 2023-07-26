@@ -34,12 +34,12 @@ public abstract class BleScanPresenter implements BluetoothAdapter.LeScanCallbac
 
     private final List<BleDevice> mBleDeviceList = new ArrayList<>();
 
-    private final Handler mMainHandler = new Handler(Looper.getMainLooper());
-    private HandlerThread mHandlerThread;
+    private final Handler mMainHandler = new Handler(Looper.getMainLooper());//todo 是同一个吗，只有一个？
+    private HandlerThread mHandlerThread;//todo
     private Handler mHandler;
     private boolean mHandling;
 
-    private static final class ScanHandler extends Handler {
+    private static final class ScanHandler extends Handler {//
 
         private final WeakReference<BleScanPresenter> mBleScanPresenter;
 
